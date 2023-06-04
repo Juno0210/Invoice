@@ -23,12 +23,15 @@ namespace Invoice
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
             string s_userName, s_password;
 
             s_userName = tb_username.Text;
             s_password = tb_pwd.Text;
-
-            connection.Open();
 
             // Authenticate a user
             SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM users WHERE UserName = @username", connection);
@@ -38,27 +41,27 @@ namespace Invoice
             //string storedPassword;
             if (reader.Read())
             {
-                string userName = reader["UserName"].ToString();
                 string storedPassword = reader["Password"].ToString();
                 
-                if (s_userName == userName)
+                if (BCrypt.Net.BCrypt.Verify(s_password, storedPassword))
                 {
-                    if (BCrypt.Net.BCrypt.Verify(s_password, storedPassword))
-                    {
-                        // Passwords match, go to main form
-                        MainMenu main = new MainMenu();
-                        main.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect password");
-                    }
-                } else
-                {
-                    MessageBox.Show("User not found!");
-                    return;
+                    // Passwords match, go to main form
+                    MainMenu main = new MainMenu();
+                    main.Show();
+                    this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show("Incorrect password");
+                    tb_username.Refresh();
+                    tb_pwd.Clear();
+                }
+            } else
+            {
+                MessageBox.Show("User not found!");
+                tb_username.Clear();
+                tb_pwd.Clear();
+                return;
             }
             
 
