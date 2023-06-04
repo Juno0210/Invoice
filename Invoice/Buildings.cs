@@ -41,7 +41,6 @@ namespace Invoice
                     "Id INT NOT NULL AUTO_INCREMENT, " +
                     "BuildingName varchar(255), " +
                     "Region VARCHAR(255), " +
-                    "BuildingOrder int, " +
                     "BuildingAddress VARCHAR(255), " +
                     "Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
                     "PRIMARY KEY (Id))", connection);
@@ -65,13 +64,16 @@ namespace Invoice
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
             string s_bName, s_bAddress, s_region;
-            int i_bOrder;
 
             s_bName = tb_bdName.Text;
             s_bAddress = tb_bdAddress.Text;
             s_region = list_region.SelectedItem.ToString();
-            i_bOrder = Convert.ToInt32(tb_bdOrder.Text);
 
             // Check if building already exists
             if (BuildingExists(s_bName))
@@ -82,18 +84,21 @@ namespace Invoice
 
             // Insert user data into "Users" table
             MySqlCommand insertCommand = new MySqlCommand(
-                "INSERT INTO buildings (BuildingName, Region, BuildingOrder, BuildingAddress) " +
-                "VALUES (@bname, @region, @border, @baddress);",
+                "INSERT INTO buildings (BuildingName, Region, BuildingAddress) " +
+                "VALUES (@bname, @region, @baddress);",
             connection);
 
             insertCommand.Parameters.AddWithValue("@bname", s_bName);
             insertCommand.Parameters.AddWithValue("@region", s_region);
-            insertCommand.Parameters.AddWithValue("@border", i_bOrder);
             insertCommand.Parameters.AddWithValue("@baddress", s_bAddress);
             insertCommand.ExecuteNonQuery();
 
             MessageBox.Show("Building registered successfully!");
-
+            
+            tb_bdName.Clear();
+            tb_bdAddress.Clear();
+            list_region.Refresh();
+            
             // Close database connection
             connection.Close();
         }

@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_bdAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tb_bdOrder = new System.Windows.Forms.TextBox();
             this.list_region = new System.Windows.Forms.ComboBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -87,25 +85,6 @@
             this.tb_bdAddress.Size = new System.Drawing.Size(157, 25);
             this.tb_bdAddress.TabIndex = 1;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Building Order:";
-            // 
-            // tb_bdOrder
-            // 
-            this.tb_bdOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_bdOrder.Location = new System.Drawing.Point(155, 173);
-            this.tb_bdOrder.Multiline = true;
-            this.tb_bdOrder.Name = "tb_bdOrder";
-            this.tb_bdOrder.Size = new System.Drawing.Size(157, 25);
-            this.tb_bdOrder.TabIndex = 1;
-            // 
             // list_region
             // 
             this.list_region.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,7 +97,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(122, 238);
+            this.btn_save.Location = new System.Drawing.Point(122, 194);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(125, 35);
             this.btn_save.TabIndex = 9;
@@ -132,15 +111,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.list_region);
-            this.Controls.Add(this.tb_bdOrder);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_bdAddress);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_bdName);
             this.Controls.Add(this.label1);
             this.Name = "Buildings";
-            this.Size = new System.Drawing.Size(369, 309);
+            this.Size = new System.Drawing.Size(369, 259);
             this.Load += new System.EventHandler(this.Buildings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,8 +131,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_bdAddress;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tb_bdOrder;
         private System.Windows.Forms.ComboBox list_region;
         private System.Windows.Forms.Button btn_save;
     }

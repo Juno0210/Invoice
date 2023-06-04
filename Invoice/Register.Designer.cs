@@ -38,8 +38,6 @@
             this.tb_pwd = new System.Windows.Forms.TextBox();
             this.lb_confirmPwd = new System.Windows.Forms.Label();
             this.tb_conPwd = new System.Windows.Forms.TextBox();
-            this.lb_cpy = new System.Windows.Forms.Label();
-            this.tb_cpy = new System.Windows.Forms.TextBox();
             this.lb_job = new System.Windows.Forms.Label();
             this.tb_job = new System.Windows.Forms.TextBox();
             this.btn_register = new System.Windows.Forms.Button();
@@ -132,28 +130,11 @@
             this.tb_conPwd.Size = new System.Drawing.Size(132, 20);
             this.tb_conPwd.TabIndex = 1;
             // 
-            // lb_cpy
-            // 
-            this.lb_cpy.AutoSize = true;
-            this.lb_cpy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cpy.Location = new System.Drawing.Point(106, 238);
-            this.lb_cpy.Name = "lb_cpy";
-            this.lb_cpy.Size = new System.Drawing.Size(39, 17);
-            this.lb_cpy.TabIndex = 0;
-            this.lb_cpy.Text = "CPY:";
-            // 
-            // tb_cpy
-            // 
-            this.tb_cpy.Location = new System.Drawing.Point(156, 238);
-            this.tb_cpy.Name = "tb_cpy";
-            this.tb_cpy.Size = new System.Drawing.Size(132, 20);
-            this.tb_cpy.TabIndex = 1;
-            // 
             // lb_job
             // 
             this.lb_job.AutoSize = true;
             this.lb_job.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_job.Location = new System.Drawing.Point(106, 279);
+            this.lb_job.Location = new System.Drawing.Point(106, 237);
             this.lb_job.Name = "lb_job";
             this.lb_job.Size = new System.Drawing.Size(35, 17);
             this.lb_job.TabIndex = 0;
@@ -161,7 +142,7 @@
             // 
             // tb_job
             // 
-            this.tb_job.Location = new System.Drawing.Point(156, 279);
+            this.tb_job.Location = new System.Drawing.Point(156, 237);
             this.tb_job.Name = "tb_job";
             this.tb_job.Size = new System.Drawing.Size(132, 20);
             this.tb_job.TabIndex = 1;
@@ -169,7 +150,7 @@
             // btn_register
             // 
             this.btn_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_register.Location = new System.Drawing.Point(111, 319);
+            this.btn_register.Location = new System.Drawing.Point(111, 277);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(125, 35);
             this.btn_register.TabIndex = 2;
@@ -181,7 +162,7 @@
             // 
             this.lb_login.AutoSize = true;
             this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_login.Location = new System.Drawing.Point(222, 370);
+            this.lb_login.Location = new System.Drawing.Point(237, 335);
             this.lb_login.Name = "lb_login";
             this.lb_login.Size = new System.Drawing.Size(48, 20);
             this.lb_login.TabIndex = 6;
@@ -193,7 +174,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 371);
+            this.label1.Location = new System.Drawing.Point(70, 336);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 17);
             this.label1.TabIndex = 5;
@@ -203,14 +184,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 416);
+            this.ClientSize = new System.Drawing.Size(357, 378);
             this.Controls.Add(this.lb_login);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.tb_job);
             this.Controls.Add(this.lb_job);
-            this.Controls.Add(this.tb_cpy);
-            this.Controls.Add(this.lb_cpy);
             this.Controls.Add(this.tb_conPwd);
             this.Controls.Add(this.lb_confirmPwd);
             this.Controls.Add(this.tb_pwd);
@@ -241,8 +220,6 @@
         private System.Windows.Forms.TextBox tb_pwd;
         private System.Windows.Forms.Label lb_confirmPwd;
         private System.Windows.Forms.TextBox tb_conPwd;
-        private System.Windows.Forms.Label lb_cpy;
-        private System.Windows.Forms.TextBox tb_cpy;
         private System.Windows.Forms.Label lb_job;
         private System.Windows.Forms.TextBox tb_job;
         private System.Windows.Forms.Button btn_register;

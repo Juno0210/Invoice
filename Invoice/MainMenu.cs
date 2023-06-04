@@ -19,7 +19,9 @@ namespace Invoice
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Customers customers = new Customers();
+            p_main.Controls.Clear();
+            p_main.Controls.Add(customers);
         }
 
         private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)

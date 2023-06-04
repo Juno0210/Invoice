@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using BCrypt.Net;
 
 namespace Invoice
 {
     public partial class Login : Form
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;database=Invoice;User Id=root;password=''");
+        SQLiteConnection connection = new SQLiteConnection("Data Source=Invoice_db.db;Version=3;");
 
         public Login()
         {
@@ -31,21 +31,36 @@ namespace Invoice
             connection.Open();
 
             // Authenticate a user
-            MySqlCommand cmd = new MySqlCommand("SELECT Password FROM users WHERE UserName = @username", connection);
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM users WHERE UserName = @username", connection);
             cmd.Parameters.AddWithValue("@username", s_userName);
-            string storedPassword = cmd.ExecuteScalar()?.ToString();
             
-            if (BCrypt.Net.BCrypt.Verify(s_password, storedPassword))
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //string storedPassword;
+            if (reader.Read())
             {
-                // Passwords match, go to main form
-                MainMenu main = new MainMenu();
-                main.Show();
-                this.Hide();
+                string userName = reader["UserName"].ToString();
+                string storedPassword = reader["Password"].ToString();
+                
+                if (s_userName == userName)
+                {
+                    if (BCrypt.Net.BCrypt.Verify(s_password, storedPassword))
+                    {
+                        // Passwords match, go to main form
+                        MainMenu main = new MainMenu();
+                        main.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect password");
+                    }
+                } else
+                {
+                    MessageBox.Show("User not found!");
+                    return;
+                }
             }
-            else
-            {
-                MessageBox.Show("Incorrect password");
-            }
+            
 
             connection.Close();
         }
