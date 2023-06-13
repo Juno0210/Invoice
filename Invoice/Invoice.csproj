@@ -140,6 +140,12 @@
     <Compile Include="Buildings.Designer.cs">
       <DependentUpon>Buildings.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuildingsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BuildingsList.Designer.cs">
+      <DependentUpon>BuildingsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     </Compile>
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomersList.Designer.cs">
+      <DependentUpon>CustomersList.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -175,11 +187,17 @@
     <EmbeddedResource Include="Buildings.resx">
       <DependentUpon>Buildings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuildingsList.resx">
+      <DependentUpon>BuildingsList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateInvoice.resx">
       <DependentUpon>CreateInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersList.resx">
+      <DependentUpon>CustomersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

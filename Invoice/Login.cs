@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCrypt.Net;
+using MySql.Data.MySqlClient;
 
 namespace Invoice
 {
     public partial class Login : Form
     {
-        SQLiteConnection connection = new SQLiteConnection("Data Source=Invoice_db.db;Version=3;");
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;database=Invoice;User Id=root;password=''");
 
         public Login()
         {
@@ -34,10 +35,10 @@ namespace Invoice
             s_password = tb_pwd.Text;
 
             // Authenticate a user
-            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM users WHERE UserName = @username", connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE UserName = @username", connection);
             cmd.Parameters.AddWithValue("@username", s_userName);
             
-            SQLiteDataReader reader = cmd.ExecuteReader();
+            MySqlDataReader reader = cmd.ExecuteReader();
             //string storedPassword;
             if (reader.Read())
             {
@@ -63,7 +64,6 @@ namespace Invoice
                 tb_pwd.Clear();
                 return;
             }
-            
 
             connection.Close();
         }

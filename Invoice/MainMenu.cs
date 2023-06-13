@@ -20,16 +20,17 @@ namespace Invoice
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Customers customers = new Customers();
+
+            customers.Location = new Point(
+                (p_main.Width - customers.Width) / 2,
+                (p_main.Height - customers.Height) / 2
+            );
+
             p_main.Controls.Clear();
             p_main.Controls.Add(customers);
         }
 
         private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void collectionDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -54,11 +55,6 @@ namespace Invoice
 
         }
 
-        private void totalCollectionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -71,10 +67,35 @@ namespace Invoice
             buildings.Location = new Point(
                 (p_main.Width - buildings.Width) / 2,
                 (p_main.Height - buildings.Height) / 2
-                );
+            );
 
             p_main.Controls.Clear();
             p_main.Controls.Add(buildings);
+        }
+
+        private void listOfBuildingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuildingsList buildingsList = new BuildingsList();
+            //buildingsList.Dock = DockStyle.Fill;
+            buildingsList.Location = new Point(
+                (p_main.Width - buildingsList.Width) / 2,
+                (p_main.Height - buildingsList.Height) / 2
+            );
+            p_main.Controls.Clear();
+            p_main.Controls.Add(buildingsList);
+
+        }
+
+        private void listOfCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomersList customersList = new CustomersList();
+
+            customersList.Location = new Point(
+                (p_main.Width - customersList.Width) / 2,
+                (p_main.Height - customersList.Height) / 2
+            );
+            p_main.Controls.Clear();
+            p_main.Controls.Add(customersList);
         }
     }
 }

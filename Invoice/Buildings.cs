@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Invoice
 {
   public partial class Buildings : UserControl
   {
-    SQLiteConnection connection = new SQLiteConnection("Data Source=Invoice_db.db;Version=3;");
+    //MySqlConnection connection = new MySqlConnection("Data Source=Invoice_db.db;Version=3;");
+    MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;database=Invoice;User Id=root;password=''");
 
     public Buildings()
     {
@@ -28,17 +30,19 @@ namespace Invoice
         connection.Open();
       }
 
-      // Check if the users table exists, if not create it
-      SQLiteCommand cmd = new SQLiteCommand("SELECT name FROM sqlite_master WHERE type='table' AND name='buildings'", connection);
+            // Check if the buildings table exists, if not create it
+            //MySqlCommand cmd = new MySqlCommand("SELECT name FROM sqlite_master WHERE type='table' AND name='buildings'", connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'Invoice' AND table_name = 'buildings'", connection);
 
-      int cnt = Convert.ToInt32(cmd.ExecuteScalar()); ;
+
+            int cnt = Convert.ToInt32(cmd.ExecuteScalar());
 
       if (cnt == 0)
       {
         // Create buildings table
-        SQLiteCommand createTableCommand = new SQLiteCommand(
+        MySqlCommand createTableCommand = new MySqlCommand(
             "CREATE TABLE buildings (" +
-            "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "ID INTEGER PRIMARY KEY AUTO_INCREMENT, " +
             "BuildingName TEXT, " +
             "Region TEXT, " +
             "BuildingAddress TEXT, " +
@@ -55,7 +59,7 @@ namespace Invoice
     }
     private bool BuildingExists(string bldgname)
     {
-      SQLiteCommand command = new SQLiteCommand("SELECT COUNT(*) FROM buildings WHERE BuildingName = @bldgname", connection);
+      MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM buildings WHERE BuildingName = @bldgname", connection);
       command.Parameters.AddWithValue("@bldgname", bldgname);
 
       int count = Convert.ToInt32(command.ExecuteScalar());
@@ -82,8 +86,8 @@ namespace Invoice
         return;
       }
 
-      // Insert user data into "Users" table
-      SQLiteCommand insertCommand = new SQLiteCommand(
+      // Insert building data into "buildings" table
+      MySqlCommand insertCommand = new MySqlCommand(
           "INSERT INTO buildings (BuildingName, Region, BuildingAddress) " +
           "VALUES (@bname, @region, @baddress);",
       connection);

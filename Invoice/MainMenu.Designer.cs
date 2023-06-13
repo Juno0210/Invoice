@@ -33,12 +33,12 @@
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buildingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBuildingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collectionDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfBuildingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unpaidSubscriptorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.totalCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.p_main = new System.Windows.Forms.Panel();
+            this.listOfCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +48,8 @@
             this.customersToolStripMenuItem,
             this.paymentsToolStripMenuItem,
             this.buildingsToolStripMenuItem,
-            this.collectionDataToolStripMenuItem,
             this.invoiceToolStripMenuItem,
             this.unpaidSubscriptorsToolStripMenuItem,
-            this.totalCollectionToolStripMenuItem,
             this.usersToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
@@ -61,6 +59,8 @@
             // 
             // customersToolStripMenuItem
             // 
+            this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listOfCustomersToolStripMenuItem});
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
             this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.customersToolStripMenuItem.Text = "Customers";
@@ -76,7 +76,8 @@
             // buildingsToolStripMenuItem
             // 
             this.buildingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createBuildingsToolStripMenuItem});
+            this.createBuildingsToolStripMenuItem,
+            this.listOfBuildingsToolStripMenuItem});
             this.buildingsToolStripMenuItem.Name = "buildingsToolStripMenuItem";
             this.buildingsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.buildingsToolStripMenuItem.Text = "Buildings";
@@ -88,12 +89,12 @@
             this.createBuildingsToolStripMenuItem.Text = "Create Buildings";
             this.createBuildingsToolStripMenuItem.Click += new System.EventHandler(this.createBuildingsToolStripMenuItem_Click);
             // 
-            // collectionDataToolStripMenuItem
+            // listOfBuildingsToolStripMenuItem
             // 
-            this.collectionDataToolStripMenuItem.Name = "collectionDataToolStripMenuItem";
-            this.collectionDataToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.collectionDataToolStripMenuItem.Text = "Collection Data";
-            this.collectionDataToolStripMenuItem.Click += new System.EventHandler(this.collectionDataToolStripMenuItem_Click);
+            this.listOfBuildingsToolStripMenuItem.Name = "listOfBuildingsToolStripMenuItem";
+            this.listOfBuildingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listOfBuildingsToolStripMenuItem.Text = "List of Buildings";
+            this.listOfBuildingsToolStripMenuItem.Click += new System.EventHandler(this.listOfBuildingsToolStripMenuItem_Click);
             // 
             // invoiceToolStripMenuItem
             // 
@@ -109,13 +110,6 @@
             this.unpaidSubscriptorsToolStripMenuItem.Text = "Unpaid Subscriptions";
             this.unpaidSubscriptorsToolStripMenuItem.Click += new System.EventHandler(this.unpaidSubscriptorsToolStripMenuItem_Click);
             // 
-            // totalCollectionToolStripMenuItem
-            // 
-            this.totalCollectionToolStripMenuItem.Name = "totalCollectionToolStripMenuItem";
-            this.totalCollectionToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.totalCollectionToolStripMenuItem.Text = "Total Collection";
-            this.totalCollectionToolStripMenuItem.Click += new System.EventHandler(this.totalCollectionToolStripMenuItem_Click);
-            // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
@@ -129,6 +123,13 @@
             this.p_main.Name = "p_main";
             this.p_main.Size = new System.Drawing.Size(731, 361);
             this.p_main.TabIndex = 1;
+            // 
+            // listOfCustomersToolStripMenuItem
+            // 
+            this.listOfCustomersToolStripMenuItem.Name = "listOfCustomersToolStripMenuItem";
+            this.listOfCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listOfCustomersToolStripMenuItem.Text = "List of Customers";
+            this.listOfCustomersToolStripMenuItem.Click += new System.EventHandler(this.listOfCustomersToolStripMenuItem_Click);
             // 
             // MainMenu
             // 
@@ -153,12 +154,12 @@
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buildingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem collectionDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unpaidSubscriptorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem totalCollectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.Panel p_main;
         private System.Windows.Forms.ToolStripMenuItem createBuildingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfBuildingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfCustomersToolStripMenuItem;
     }
 }

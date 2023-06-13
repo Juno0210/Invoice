@@ -37,6 +37,7 @@ D:\Work\C#\Invoice\Invoice\bin\Debug\System.Memory.xml
 D:\Work\C#\Invoice\Invoice\bin\Debug\System.Numerics.Vectors.xml
 D:\Work\C#\Invoice\Invoice\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Work\C#\Invoice\Invoice\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.csproj.AssemblyReference.cache
 D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.csproj.SuggestedBindingRedirects.cache
 D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.Buildings.resources
 D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.CreateInvoice.resources
@@ -50,4 +51,5 @@ D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.csproj.CoreCompileInputs.cache
 D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.csproj.CopyComplete
 D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.exe
 D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.pdb
-D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.csproj.AssemblyReference.cache
+D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.BuildingsList.resources
+D:\Work\C#\Invoice\Invoice\obj\Debug\Invoice.CustomersList.resources

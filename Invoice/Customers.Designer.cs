@@ -42,14 +42,10 @@
             this.tb_sType = new System.Windows.Forms.TextBox();
             this.lb_fee = new System.Windows.Forms.Label();
             this.tb_fee = new System.Windows.Forms.TextBox();
-            this.lb_phone = new System.Windows.Forms.Label();
-            this.tb_phone = new System.Windows.Forms.TextBox();
             this.lb_title = new System.Windows.Forms.Label();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.lb_startsub = new System.Windows.Forms.Label();
             this.dt_start = new System.Windows.Forms.DateTimePicker();
-            this.lb_endsub = new System.Windows.Forms.Label();
-            this.dt_end = new System.Windows.Forms.DateTimePicker();
             this.btn_save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -186,25 +182,6 @@
             this.tb_fee.Size = new System.Drawing.Size(160, 25);
             this.tb_fee.TabIndex = 1;
             // 
-            // lb_phone
-            // 
-            this.lb_phone.AutoSize = true;
-            this.lb_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_phone.Location = new System.Drawing.Point(13, 268);
-            this.lb_phone.Name = "lb_phone";
-            this.lb_phone.Size = new System.Drawing.Size(107, 17);
-            this.lb_phone.TabIndex = 0;
-            this.lb_phone.Text = "Phone Number:";
-            // 
-            // tb_phone
-            // 
-            this.tb_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_phone.Location = new System.Drawing.Point(124, 265);
-            this.tb_phone.Multiline = true;
-            this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(160, 25);
-            this.tb_phone.TabIndex = 1;
-            // 
             // lb_title
             // 
             this.lb_title.AutoSize = true;
@@ -244,26 +221,6 @@
             this.dt_start.Size = new System.Drawing.Size(180, 20);
             this.dt_start.TabIndex = 11;
             // 
-            // lb_endsub
-            // 
-            this.lb_endsub.AutoSize = true;
-            this.lb_endsub.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_endsub.Location = new System.Drawing.Point(303, 215);
-            this.lb_endsub.Name = "lb_endsub";
-            this.lb_endsub.Size = new System.Drawing.Size(130, 17);
-            this.lb_endsub.TabIndex = 0;
-            this.lb_endsub.Text = "EndOfSubscription:";
-            // 
-            // dt_end
-            // 
-            this.dt_end.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_end.CustomFormat = "dd/mm/YYYY";
-            this.dt_end.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dt_end.Location = new System.Drawing.Point(441, 215);
-            this.dt_end.Name = "dt_end";
-            this.dt_end.Size = new System.Drawing.Size(180, 20);
-            this.dt_end.TabIndex = 11;
-            // 
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,19 +237,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.dt_end);
             this.Controls.Add(this.dt_start);
             this.Controls.Add(this.list_building);
             this.Controls.Add(this.lb_bName);
             this.Controls.Add(this.lb_title);
             this.Controls.Add(this.list_region);
-            this.Controls.Add(this.lb_endsub);
             this.Controls.Add(this.lb_region);
             this.Controls.Add(this.lb_startsub);
             this.Controls.Add(this.tb_address);
-            this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.lb_address);
-            this.Controls.Add(this.lb_phone);
             this.Controls.Add(this.tb_title);
             this.Controls.Add(this.tb_fee);
             this.Controls.Add(this.lb_fee);
@@ -326,14 +279,10 @@
         private System.Windows.Forms.TextBox tb_sType;
         private System.Windows.Forms.Label lb_fee;
         private System.Windows.Forms.TextBox tb_fee;
-        private System.Windows.Forms.Label lb_phone;
-        private System.Windows.Forms.TextBox tb_phone;
         private System.Windows.Forms.Label lb_title;
         private System.Windows.Forms.TextBox tb_title;
         private System.Windows.Forms.Label lb_startsub;
         private System.Windows.Forms.DateTimePicker dt_start;
-        private System.Windows.Forms.Label lb_endsub;
-        private System.Windows.Forms.DateTimePicker dt_end;
         private System.Windows.Forms.Button btn_save;
     }
 }
